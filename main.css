@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    background: aqua;
+}
+.body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("gory_ozero_vershiny_derevya_118251_1600x1200.jpg");
+    position: relative;
+}
+.body-botton{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    border: 10px solid blue;
+    padding: 15px;
+    position: absolute;
+    top:30%;
+    left:45%;
+    z-index: 10;
+}
+.body-botton button{
+    border-radius: 50px;
+    height: 100%;
+    color: white;
+    width: 100%;
+    background: dodgerblue;
+    border: none;
+    transform: scale(1);
+}
+button:active{
+    transform: scale(.90);
+}
+.body-botton:hover{
+    border: 10px solid navy;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 900px;
+    margin: 5% auto;
+    perspective: 1000px;
+    opacity: 0;
+    transition: 2s linear;
+}
+.main-card{
+    margin: 5px;
+    width: calc(16.666% - 10px) ;
+    height: calc(33.333% - 10px);
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    border: 5px;
+}
+.main-card:active{
+    transform: scale(.95);
+    transition: transform .2s;
+}
+.main-card.flip{
+    transform: rotateY(180deg);
+}
+.main-card_front, .main-card_back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    backface-visibility: hidden;
+}
+.main-card_back{
+    border: 2px solid dodgerblue;
+}
+.main-card_front{
+    transform: rotateY(180deg);
+    background: blue;
+    color: white;
+    font-size: 140px;
+    text-align: center;
+    padding-top: 10px;
+}
+.open{
+    border: 5px solid navy;
+}
+#counter{
+    color: dodgerblue;
+    font-size: 30px;
+    text-align: center;
+    padding: 2px 0;
+    position: absolute;
+    margin-top: -50px;
+    left: calc(50% - 23px) ;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid dodgerblue;
+    background: transparent;
+}
+.and-game{
+    display: none;
+    margin: 50px auto;
+}
